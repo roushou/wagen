@@ -1,8 +1,7 @@
 {
   "name": "wagen",
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy --minify",
+    "dev": "bun --watch ./src/app.ts",
     "format": "biome format . --write",
     "check": "biome check . --write",
     "check:types": "tsc --noEmit",
@@ -14,7 +13,6 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
-    "@cloudflare/workers-types": "^4.20240529.0",
-    "wrangler": "^3.57.2"
+    "@types/bun": "^1.1.8"
   }
 }
