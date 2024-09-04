@@ -1,5 +1,9 @@
-import { createRoute } from "honox/factory";
+import { Hono } from "hono";
 
-export const GET = createRoute((ctx) => {
+const router = new Hono();
+
+router.get("/", (ctx) => {
   return ctx.text("healthy");
 });
+
+export default router;
