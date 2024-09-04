@@ -15,7 +15,8 @@ RUN apt-get update -qq && \
     apt-get install -y python-is-python3 pkg-config build-essential 
 
 COPY --link package.json .
-RUN bun install --frozen-lockfile --production
+# TODO: Install only production dependencies
+RUN bun install --frozen-lockfile
 
 COPY --link . .
 
@@ -25,4 +26,5 @@ COPY --from=build /app /app
 
 EXPOSE 8080
 
-CMD [ "bun", "run", "start" ]
+# TODO: Use build instead of dev server
+CMD ["bun", "dev", "--host", "0.0.0.0", "--port", "8080"]
