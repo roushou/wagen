@@ -1,12 +1,14 @@
 import { zValidator } from "@hono/zod-validator";
 import { Hono } from "hono";
 import { HTTPException } from "hono/http-exception";
+import { logger } from "hono/logger";
 import { z } from "zod";
 import { fluxMiddleware } from "./middlewares/flux";
 import type { Variables } from "./types";
 
 const app = new Hono<{ Variables: Variables }>();
 
+app.use(logger());
 app.use(fluxMiddleware);
 
 app.get("/_health", (ctx) => {
