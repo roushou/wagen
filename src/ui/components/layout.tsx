@@ -15,5 +15,9 @@ export const Layout: FC = (props: PropsWithChildren) => {
 };
 
 const TopBar: FC = () => {
-  return <div class="bg-red-500">Wagen</div>;
+  return (
+    <div class="flex h-12 items-center border-b border-b-gray-200 px-12">
+      <div class="font-medium">Wagen</div>
+    </div>
+  );
 };
