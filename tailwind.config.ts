@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config = {
-  content: ["./src/**/*.tsx"],
+  content: ["./app/**/*.{ts,tsx}"],
   theme: {
     extend: {
       keyframes: {

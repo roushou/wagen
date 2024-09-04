@@ -1,9 +1,10 @@
 import { env } from "hono/adapter";
 import { createMiddleware } from "hono/factory";
-import { createFluxClient } from "../flux";
-import type { Env } from "../types";
+import { createRoute } from "honox/factory";
+import { createFluxClient } from "../../lib/flux";
+import type { Env } from "../../types";
 
-export const fluxMiddleware = createMiddleware(async (ctx, next) => {
+const fluxMiddleware = createMiddleware(async (ctx, next) => {
   const envVars = env<Env>(ctx);
 
   const flux = createFluxClient({
@@ -15,3 +16,5 @@ export const fluxMiddleware = createMiddleware(async (ctx, next) => {
 
   await next();
 });
+
+export default createRoute(fluxMiddleware);
