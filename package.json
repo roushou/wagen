@@ -1,6 +1,11 @@
 {
   "name": "wagen",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./src/app.ts",
   "scripts": {
+    "start": "bun run ./src/app.ts",
     "dev": "bun --watch ./src/app.ts",
     "format": "biome format . --write",
     "check": "biome check . --write",
