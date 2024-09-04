@@ -1,5 +1,5 @@
 import {} from "hono";
-import type { FluxClient } from "../src/flux";
+import type { FluxClient } from "./lib/flux";
 
 type Head = {
   title?: string;
